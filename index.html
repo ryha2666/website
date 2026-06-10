@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ryan Hajdu — Aerospace Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d1b2a;--navy-mid:#1a2e45;--sky:#4a90d9;--sky-light:#e8f2fb;
+  --cream:#faf9f6;--ink:#1a1a1a;--ink-mid:#4a4a4a;--ink-light:#888;
+  --border:rgba(0,0,0,0.08);--white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:15px}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-name{font-family:'DM Serif Display',serif;font-size:18px;color:#fff}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;text-decoration:none;color:rgba(255,255,255,0.65);letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#fff}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:5rem 2rem 4rem;background:linear-gradient(160deg,#0d1b2a 0%,#1a3a5c 45%,#2e6ea6 80%,#4a90d9 100%);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(74,144,217,0.15) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.25rem}
+.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,5.5rem);line-height:1.05;color:#fff;margin-bottom:1.25rem;letter-spacing:-.02em}
+.hero-name em{font-style:italic;color:#7ec8f5}
+.hero-bio{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.75);max-width:560px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;letter-spacing:.02em;transition:all .2s;cursor:pointer}
+.btn-primary{background:#fff;color:var(--navy);border:1.5px solid #fff}
+.btn-primary:hover{background:rgba(255,255,255,0.9);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:rgba(255,255,255,0.85);border:1.5px solid rgba(255,255,255,0.35)}
+.btn-outline:hover{border-color:#fff;color:#fff;transform:translateY(-1px)}
+
+.stats-bar{background:var(--navy);padding:1.5rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-val{font-family:'DM Serif Display',serif;font-size:1.75rem;color:#7ec8f5;line-height:1}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:4px}
+
+section{max-width:900px;margin:0 auto;padding:4rem 2rem}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:.6rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.75rem,3.5vw,2.5rem);color:var(--navy);margin-bottom:2rem;line-height:1.15;letter-spacing:-.01em}
+hr.divider{border:none;border-top:1px solid var(--border);margin:0 auto;max-width:900px}
+
+.card-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:.9rem}
+.card-tag.aero{background:#f0ebff;color:#5a3ab5}
+.card-tag.propulsion{background:#fff0eb;color:#b84a1d}
+.card-tag.structures{background:#ebf5eb;color:#2a7a2a}
+
+.glider-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:1.25rem}
+.glider-top{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}
+.card-title{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.4rem;line-height:1.2}
+.card-role{font-size:12px;font-weight:500;color:var(--ink-light);margin-bottom:.8rem;letter-spacing:.03em}
+.card-body{font-size:14px;line-height:1.7;color:var(--ink-mid)}
+.card-metrics{display:flex;gap:1.5rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.metric-val{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy);line-height:1}
+.metric-label{font-size:11px;color:var(--ink-light);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+
+.videos-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.video-wrap{display:flex;flex-direction:column;gap:.5rem}
+.video-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light)}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:1px solid var(--border)}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:8px}
+
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.project-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:box-shadow .2s,transform .2s}
+.project-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.07);transform:translateY(-2px)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.skill-group{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.skill-group-title{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1rem}
+.skill-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.skill-list li{font-size:13px;font-weight:500;padding:4px 12px;border-radius:5px;background:var(--cream);color:var(--ink-mid);border:1px solid var(--border)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{font-size:16px;line-height:1.8;color:var(--ink-mid);margin-bottom:1rem}
+.about-details{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.about-details li{display:flex;flex-direction:column;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
+.about-details li:last-child{border-bottom:none}
+.detail-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:3px}
+.detail-val{font-size:14px;color:var(--ink);font-weight:500}
+
+.contact-row{display:flex;gap:1.25rem;flex-wrap:wrap}
+.contact-card{flex:1;min-width:180px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;transition:all .2s}
+.contact-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
+.contact-card-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.5rem}
+.contact-card-val{font-size:14px;font-weight:500;color:var(--navy)}
+
+footer{text-align:center;padding:2rem;font-size:13px;color:var(--ink-light);border-top:1px solid var(--border)}
+
+@media(max-width:640px){
+  .glider-top,.videos-row,.projects-grid,.skills-grid,.about-grid{grid-template-columns:1fr}
+  .stats-bar{gap:2rem}
+  nav{padding:0 1rem}.nav-links{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Ryan Hajdu</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Aerospace Engineering · CU Boulder · Class of 2027</p>
+    <h1 class="hero-name">Building things<br>that <em>actually fly.</em></h1>
+    <p class="hero-bio">Junior at CU Boulder studying Aerospace Engineering. I've built and tested a hybrid rocket engine, competed in AIAA Design Build Fly, and led an aircraft design project from trade studies to hardware to flight test.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">See my work</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-val">70 N</div><div class="stat-label">Peak thrust</div></div>
+  <div class="stat"><div class="stat-val">58.3 m</div><div class="stat-label">Glide range</div></div>
+  <div class="stat"><div class="stat-val">14.47 m</div><div class="stat-label">Apogee</div></div>
+  <div class="stat"><div class="stat-val">8.44</div><div class="stat-label">Aspect ratio</div></div>
+  <div class="stat"><div class="stat-val">11.6</div><div class="stat-label">L/D max</div></div>
+</div>
+
+<section id="about">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">A bit about me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I grew up in the Chicago area and came to CU Boulder for its aerospace program. I'm drawn to problems that live at the intersection of analytical modeling and physical hardware — designing something on paper and then watching it either work or tell you exactly why it doesn't.</p>
+      <p>Outside of engineering, I've spent summers working the docks in Chicago, which taught me a different kind of technical judgment — one built from repetition and attention to what actually breaks. I'm looking for a summer 2026 internship where I can contribute real work in propulsion, structures, or aerodynamics.</p>
+    </div>
+    <ul class="about-details">
+      <li><span class="detail-label">Degree</span><span class="detail-val">B.S. Aerospace Engineering</span></li>
+      <li><span class="detail-label">Minor</span><span class="detail-val">Engineering Management</span></li>
+      <li><span class="detail-label">University</span><span class="detail-val">University of Colorado Boulder</span></li>
+      <li><span class="detail-label">Expected graduation</span><span class="detail-val">May 2027</span></li>
+      <li><span class="detail-label">Seeking</span><span class="detail-val">Summer 2026 internship — Colorado or Chicago area</span></li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<section id="projects">
+  <p class="section-label">Work</p>
+  <h2 class="section-title">Projects</h2>
+
+  <div class="glider-card">
+    <span class="card-tag aero">Aircraft Design</span>
+    <div class="glider-top">
+      <div>
+        <h3 class="card-title">Swept-Wing Glider — Design Lead</h3>
+        <p class="card-role">Aerospace Design Course · Jan – May 2025</p>
+        <p class="card-body">Led a team through the full design-build-test cycle. Ran trade studies on planform area, wingspan, and fuselage length, then iterated from a delta configuration to a high-aspect-ratio swept flying wing. Wrote MATLAB and C++ performance prediction tools and fabricated three prototype wings in foamcore with PETG 3D-printed mounts.</p>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">58.3 m</div><div class="metric-label">Glide range</div></div>
+          <div class="metric"><div class="metric-val">14.47 m</div><div class="metric-label">Apogee</div></div>
+          <div class="metric"><div class="metric-val">AR 8.44</div><div class="metric-label">Aspect ratio</div></div>
+          <div class="metric"><div class="metric-val">11.6</div><div class="metric-label">L/D max</div></div>
+          <div class="metric"><div class="metric-val">28.94%</div><div class="metric-label">Static margin</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="videos-row">
+          <div class="video-wrap">
+            <span class="video-label">Glide test</span>
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/RTHmm7h4ssU" title="Glide test" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+          <div class="video-wrap">
+            <span class="video-label">Boost test</span>
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/cgcDy48dgOY" title="Boost test" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <span class="card-tag propulsion">Propulsion</span>
+      <h3 class="card-title">Hybrid Rocket Engine — Test Engineer</h3>
+      <p class="card-role">CU Boulder Propulsion Lab · Aug – Nov 2024</p>
+      <p class="card-body">Designed CAD models for the nozzle, fuel grain, and injector plates of a liquid-solid hybrid rocket engine. Executed Cold Flow and Hot Fire testing protocols and measured a peak thrust of 70 N. Identified injector plate geometry as the primary performance-limiting factor.</p>
+    </div>
+    <div class="project-card">
+      <span class="card-tag structures">Aerodynamics · Structures</span>
+      <h3 class="card-title">AIAA Design Build Fly</h3>
+      <p class="card-role">CU Boulder · Mar 2025 – Mar 2026</p>
+      <p class="card-body">Developed a competition RC aircraft meeting AIAA DBF mission requirements across structures and aerodynamics sub-teams. Designed and iterated prototypes in Fusion 360, optimizing geometry for structural integrity and weight within the mission profile.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<section id="skills">
+  <p class="section-label">Capabilities</p>
+  <h2 class="section-title">Skills & tools</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <p class="skill-group-title">Software</p>
+      <ul class="skill-list">
+        <li>MATLAB</li><li>SolidWorks</li><li>Fusion 360</li>
+        <li>Onshape</li><li>LabVIEW</li><li>C++</li><li>Excel</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Engineering Methods</p>
+      <ul class="skill-list">
+        <li>CFD</li><li>FEA</li><li>CAD/CAM</li>
+        <li>Trade Studies</li><li>Test & Evaluation</li><li>Systems Integration</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-title">Other</p>
+      <ul class="skill-list">
+        <li>Project Management</li><li>Technical Documentation</li>
+        <li>Team Leadership</li><li>Root-Cause Analysis</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<section id="contact">
+  <p class="section-label">Get in touch</p>
+  <h2 class="section-title">Let's talk</h2>
+  <p style="color:var(--ink-mid);font-size:15px;max-width:480px;margin-bottom:1.75rem;line-height:1.75">I'm actively looking for summer 2026 internship opportunities in aerospace and aeronautics, with a preference for Colorado-based teams.</p>
+  <div class="contact-row">
+    <a class="contact-card" href="mailto:ryha2666@colorado.edu">
+      <p class="contact-card-label">Email</p><p class="contact-card-val">ryha2666@colorado.edu</p>
+    </a>
+    <a class="contact-card" href="tel:7739516671">
+      <p class="contact-card-label">Phone</p><p class="contact-card-val">773-951-6671</p>
+    </a>
+    <a class="contact-card" href="https://linkedin.com/in/hajduryan" target="_blank">
+      <p class="contact-card-label">LinkedIn</p><p class="contact-card-val">linkedin.com/in/hajduryan</p>
+    </a>
+    <a class="contact-card" href="#">
+      <p class="contact-card-label">Resume</p><p class="contact-card-val">Download PDF ↓</p>
+    </a>
+  </div>
+</section>
+
+<footer>Ryan Hajdu · Aerospace Engineering · CU Boulder · 2027</footer>
+
+</body>
+</html>
