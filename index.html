@@ -37,15 +37,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,0.92);backdrop-fi
 .btn-outline{background:transparent;color:rgba(255,255,255,0.85);border:1.5px solid rgba(255,255,255,0.35)}
 .btn-outline:hover{border-color:#fff;color:#fff;transform:translateY(-1px)}
 
-.stats-bar{background:var(--navy);padding:1.5rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap}
-.stat{text-align:center}
-.stat-val{font-family:'DM Serif Display',serif;font-size:1.75rem;color:#7ec8f5;line-height:1}
-.stat-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:4px}
-
 section{max-width:900px;margin:0 auto;padding:4rem 2rem}
 .section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:.6rem}
 .section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.75rem,3.5vw,2.5rem);color:var(--navy);margin-bottom:2rem;line-height:1.15;letter-spacing:-.01em}
 hr.divider{border:none;border-top:1px solid var(--border);margin:0 auto;max-width:900px}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{font-size:16px;line-height:1.8;color:var(--ink-mid);margin-bottom:1rem}
+.about-details{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.about-details li{display:flex;flex-direction:column;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
+.about-details li:last-child{border-bottom:none}
+.detail-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:3px}
+.detail-val{font-size:14px;color:var(--ink);font-weight:500}
 
 .card-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:.9rem}
 .card-tag.aero{background:#f0ebff;color:#5a3ab5}
@@ -53,19 +56,19 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0 auto;max-widt
 .card-tag.structures{background:#ebf5eb;color:#2a7a2a}
 
 .glider-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:1.25rem}
-.glider-top{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}
-.card-title{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.4rem;line-height:1.2}
-.card-role{font-size:12px;font-weight:500;color:var(--ink-light);margin-bottom:.8rem;letter-spacing:.03em}
-.card-body{font-size:14px;line-height:1.7;color:var(--ink-mid)}
-.card-metrics{display:flex;gap:1.5rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);flex-wrap:wrap}
-.metric-val{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy);line-height:1}
-.metric-label{font-size:11px;color:var(--ink-light);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
-
-.videos-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.videos-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
 .video-wrap{display:flex;flex-direction:column;gap:.5rem}
 .video-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light)}
 .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:1px solid var(--border)}
 .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:8px}
+.glider-bottom{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;padding-top:1.5rem;border-top:1px solid var(--border)}
+.card-title{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.4rem;line-height:1.2}
+.card-role{font-size:12px;font-weight:500;color:var(--ink-light);margin-bottom:.8rem;letter-spacing:.03em}
+.card-body{font-size:14px;line-height:1.7;color:var(--ink-mid)}
+.card-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.metric{background:var(--cream);border-radius:8px;padding:.75rem 1rem}
+.metric-val{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);line-height:1}
+.metric-label{font-size:11px;color:var(--ink-light);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
 
 .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .project-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:box-shadow .2s,transform .2s}
@@ -77,26 +80,18 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0 auto;max-widt
 .skill-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .skill-list li{font-size:13px;font-weight:500;padding:4px 12px;border-radius:5px;background:var(--cream);color:var(--ink-mid);border:1px solid var(--border)}
 
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.about-text p{font-size:16px;line-height:1.8;color:var(--ink-mid);margin-bottom:1rem}
-.about-details{list-style:none;display:flex;flex-direction:column;gap:.9rem}
-.about-details li{display:flex;flex-direction:column;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
-.about-details li:last-child{border-bottom:none}
-.detail-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:3px}
-.detail-val{font-size:14px;color:var(--ink);font-weight:500}
-
-.contact-row{display:flex;gap:1.25rem;flex-wrap:wrap}
-.contact-card{flex:1;min-width:180px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;transition:all .2s}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;transition:all .2s;display:block}
 .contact-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
 .contact-card-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.5rem}
-.contact-card-val{font-size:14px;font-weight:500;color:var(--navy)}
+.contact-card-val{font-size:15px;font-weight:500;color:var(--navy)}
 
 footer{text-align:center;padding:2rem;font-size:13px;color:var(--ink-light);border-top:1px solid var(--border)}
 
 @media(max-width:640px){
-  .glider-top,.videos-row,.projects-grid,.skills-grid,.about-grid{grid-template-columns:1fr}
-  .stats-bar{gap:2rem}
+  .about-grid,.glider-bottom,.videos-row,.projects-grid,.skills-grid,.contact-grid{grid-template-columns:1fr}
   nav{padding:0 1rem}.nav-links{gap:1rem}
+  section{padding:3rem 1.25rem}
 }
 </style>
 </head>
@@ -124,21 +119,13 @@ footer{text-align:center;padding:2rem;font-size:13px;color:var(--ink-light);bord
   </div>
 </div>
 
-<div class="stats-bar">
-  <div class="stat"><div class="stat-val">70 N</div><div class="stat-label">Peak thrust</div></div>
-  <div class="stat"><div class="stat-val">58.3 m</div><div class="stat-label">Glide range</div></div>
-  <div class="stat"><div class="stat-val">14.47 m</div><div class="stat-label">Apogee</div></div>
-  <div class="stat"><div class="stat-val">8.44</div><div class="stat-label">Aspect ratio</div></div>
-  <div class="stat"><div class="stat-val">11.6</div><div class="stat-label">L/D max</div></div>
-</div>
-
 <section id="about">
   <p class="section-label">Background</p>
   <h2 class="section-title">A bit about me</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I grew up in the Chicago area and came to CU Boulder for its aerospace program. I'm drawn to problems that live at the intersection of analytical modeling and physical hardware — designing something on paper and then watching it either work or tell you exactly why it doesn't.</p>
-      <p>Outside of engineering, I've spent summers working the docks in Chicago, which taught me a different kind of technical judgment — one built from repetition and attention to what actually breaks. I'm looking for a summer 2026 internship where I can contribute real work in propulsion, structures, or aerodynamics.</p>
+      <p>I'm drawn to problems that sit at the edge of analysis and hardware — where the model gives you a prediction and the test either confirms it or tells you exactly what you got wrong. That feedback loop is what keeps me in aerospace.</p>
+      <p>My work spans both ends: I've written performance prediction tools in MATLAB and C++, run trade studies on aircraft geometry, fabricated prototype wings, and executed rocket engine test protocols. I want to keep building that range — contributing to real hardware programs where analytical work connects directly to what gets built and tested.</p>
     </div>
     <ul class="about-details">
       <li><span class="detail-label">Degree</span><span class="detail-val">B.S. Aerospace Engineering</span></li>
@@ -158,34 +145,33 @@ footer{text-align:center;padding:2rem;font-size:13px;color:var(--ink-light);bord
 
   <div class="glider-card">
     <span class="card-tag aero">Aircraft Design</span>
-    <div class="glider-top">
+    <div class="videos-row">
+      <div class="video-wrap">
+        <span class="video-label">Glide test</span>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/RTHmm7h4ssU" title="Glide test" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="video-wrap">
+        <span class="video-label">Boost test</span>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/cgcDy48dgOY" title="Boost test" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="glider-bottom">
       <div>
         <h3 class="card-title">Swept-Wing Glider — Design Lead</h3>
         <p class="card-role">Aerospace Design Course · Jan – May 2025</p>
-        <p class="card-body">Led a team through the full design-build-test cycle. Ran trade studies on planform area, wingspan, and fuselage length, then iterated from a delta configuration to a high-aspect-ratio swept flying wing. Wrote MATLAB and C++ performance prediction tools and fabricated three prototype wings in foamcore with PETG 3D-printed mounts.</p>
-        <div class="card-metrics">
-          <div class="metric"><div class="metric-val">58.3 m</div><div class="metric-label">Glide range</div></div>
-          <div class="metric"><div class="metric-val">14.47 m</div><div class="metric-label">Apogee</div></div>
-          <div class="metric"><div class="metric-val">AR 8.44</div><div class="metric-label">Aspect ratio</div></div>
-          <div class="metric"><div class="metric-val">11.6</div><div class="metric-label">L/D max</div></div>
-          <div class="metric"><div class="metric-val">28.94%</div><div class="metric-label">Static margin</div></div>
-        </div>
+        <p class="card-body">Led a team through the full design-build-test cycle. Ran trade studies on planform area, wingspan, and fuselage length, then iterated from a delta configuration to a high-AR swept flying wing. Wrote MATLAB and C++ performance prediction tools and fabricated three prototype wings in foamcore with PETG 3D-printed mounts.</p>
       </div>
-      <div>
-        <div class="videos-row">
-          <div class="video-wrap">
-            <span class="video-label">Glide test</span>
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/RTHmm7h4ssU" title="Glide test" allowfullscreen loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="video-wrap">
-            <span class="video-label">Boost test</span>
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/cgcDy48dgOY" title="Boost test" allowfullscreen loading="lazy"></iframe>
-            </div>
-          </div>
-        </div>
+      <div class="card-metrics">
+        <div class="metric"><div class="metric-val">58.3 m</div><div class="metric-label">Glide range</div></div>
+        <div class="metric"><div class="metric-val">14.47 m</div><div class="metric-label">Apogee</div></div>
+        <div class="metric"><div class="metric-val">AR 8.44</div><div class="metric-label">Aspect ratio</div></div>
+        <div class="metric"><div class="metric-val">11.6</div><div class="metric-label">L/D max</div></div>
+        <div class="metric"><div class="metric-val">28.94%</div><div class="metric-label">Static margin</div></div>
+        <div class="metric"><div class="metric-val">8</div><div class="metric-label">Test iterations</div></div>
       </div>
     </div>
   </div>
@@ -242,7 +228,7 @@ footer{text-align:center;padding:2rem;font-size:13px;color:var(--ink-light);bord
   <p class="section-label">Get in touch</p>
   <h2 class="section-title">Let's talk</h2>
   <p style="color:var(--ink-mid);font-size:15px;max-width:480px;margin-bottom:1.75rem;line-height:1.75">I'm actively looking for summer 2026 internship opportunities in aerospace and aeronautics, with a preference for Colorado-based teams.</p>
-  <div class="contact-row">
+  <div class="contact-grid">
     <a class="contact-card" href="mailto:ryha2666@colorado.edu">
       <p class="contact-card-label">Email</p><p class="contact-card-val">ryha2666@colorado.edu</p>
     </a>
