@@ -59,7 +59,9 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0 auto;max-widt
 .video-wrap{display:flex;flex-direction:column;gap:.5rem}
 .video-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light)}
 .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:1px solid var(--border)}
+.video-embed.shorts{padding-bottom:177.78%}
 .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:8px}
+.video-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:.5rem}
 .glider-bottom{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;padding-top:1.5rem;border-top:1px solid var(--border)}
 .card-title{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;margin-bottom:.4rem;line-height:1.2}
 .card-role{font-size:12px;font-weight:500;color:var(--text-light);margin-bottom:.8rem;letter-spacing:.03em}
@@ -179,12 +181,20 @@ footer{text-align:center;padding:2rem;font-size:13px;color:var(--text-light);bor
   <div class="projects-grid">
     <div class="project-card fade-up fade-up-delay-2">
       <span class="card-tag propulsion">Propulsion</span>
+      <p class="video-label">Hot fire test</p>
+      <div class="video-embed shorts" style="margin-bottom:1rem">
+        <iframe src="https://www.youtube.com/embed/ocrLQyLBgys" title="Hot fire test" allowfullscreen loading="lazy"></iframe>
+      </div>
       <h3 class="card-title">Hybrid Rocket Engine Test Engineer</h3>
       <p class="card-role">CU Boulder Propulsion Lab · Aug – Nov 2024</p>
       <p class="card-body">Designed CAD models for the nozzle, fuel grain, and injector plates of a liquid-solid hybrid rocket engine. Executed Cold Flow and Hot Fire testing protocols and measured a peak thrust of 70 N. Identified injector plate geometry as the primary performance-limiting factor.</p>
     </div>
     <div class="project-card fade-up fade-up-delay-3">
       <span class="card-tag structures">Aerodynamics · Structures</span>
+      <p class="video-label">Competition aircraft</p>
+      <div class="video-embed shorts" style="margin-bottom:1rem">
+        <iframe src="https://www.youtube.com/embed/v7uCQABkEAw" title="AIAA DBF aircraft" allowfullscreen loading="lazy"></iframe>
+      </div>
       <h3 class="card-title">AIAA Design Build Fly</h3>
       <p class="card-role">CU Boulder · Mar 2025 – Mar 2026</p>
       <p class="card-body">Developed a competition RC aircraft meeting AIAA DBF mission requirements across structures and aerodynamics sub-teams. Designed and iterated prototypes in Fusion 360, optimizing geometry for structural integrity and weight within the mission profile.</p>
